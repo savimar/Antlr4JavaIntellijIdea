@@ -11,7 +11,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 ![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
-3)Для Maven проекта добавить в pom.xml
+3)Для Maven проекта добавить в pom.xml или создать новый проект.
 
 ```
  <dependency>
@@ -37,4 +37,6 @@ Bвести в поле поиска ANTLR и поставить плагин AN
  ```
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
+
+4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке.
 
