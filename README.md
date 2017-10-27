@@ -4,4 +4,5 @@
 Installing Oracle Java JDK and Intellij Idea
 
 2)File-Setting_Plugins
-![Иллюстрация к проекту](https://github.com/jon/coolproject/raw/master/image/image.png)
+
+![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/setting.png)
