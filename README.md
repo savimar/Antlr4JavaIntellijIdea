@@ -1,6 +1,6 @@
 # Antlr-Java-and-Intellij-Idea
 
-1)Поставить Oracle Java JDK и Intellij Idea
+1)Поставить Oracle Java JDK и Intellij Idea, запустить Intellij Idea
 
 
 2)File-Setting-Plugins
