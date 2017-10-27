@@ -13,15 +13,15 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 3)Для Maven проекта добавить в pom.xml
 
+```
  <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
             <version>4.7</version>
- </dependency>
- 
- 
+ </dependency> 
+ ```
  и
- 
+ ```
   <plugin>
     <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
@@ -34,6 +34,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
                     </execution>
                 </executions>
             </plugin>
+ ```
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
