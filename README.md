@@ -9,7 +9,7 @@
 
 Bвести в поле поиска ANTLR и поставить плагин ANTLR v4 grammar plugin. Возможно, понадобится дополнительный поиск по всем репозиториям.
 
-![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
+![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
 3)Для Maven проекта добавить в pom.xml или создать новый проект.
 
@@ -38,7 +38,8 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Например, можно использовать такое содержимое для файла Hello.g4
+4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Для примера взято содержимое примера с официального сайта для файла Hello.g4
+
  ```
 // Define a grammar called Hello
 grammar Hello;
@@ -47,3 +48,10 @@ ID : [a-z]+ ;             // match lower-case identifiers
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
  ```
+ 
+ 5)
+ Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
+ 
+ ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
+
+ 
