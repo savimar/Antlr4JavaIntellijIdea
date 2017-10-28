@@ -53,5 +53,35 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
+ 
+ Внизу откроются окна проверки грамматики.
+ 
+ 6)Кликает по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
+ 
+ ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
+ 
+ После этого появися в правом нижнем углу сообщение
+ 
+ ![Image recoqn](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/recogn.png)
+ 
+ 7))Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
+ 
+ ![Image configure](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/configure.png)
+ 
+ и выходит окно плагина  ANTLR Works
+ 
+ ![Image config](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config.png)
+ 
+ В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли нfv visitor или listener? а также   другую требуемую информацию, и нажимаем  кнопку ОК
+  И ANTLR после этого генерирует файлы для распознавания (правда в моем случе они появились не в той папке, пришлось переносить)
+  
+  ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
+ 
+  
+ 
+ 
+ 
+ 
+ 
 
  
