@@ -38,5 +38,12 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке.
+4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Например, можно использовать такое содержимое для файла Hello.g4
+ ```
+// Define a grammar called Hello
+grammar Hello;
+r  : 'hello' ID ;         // match keyword hello followed by an identifier
+ID : [a-z]+ ;             // match lower-case identifiers
+WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
+ ```
