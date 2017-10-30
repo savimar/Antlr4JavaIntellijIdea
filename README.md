@@ -49,12 +49,14 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
  ```
  
+ 
  5)
  Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
- Внизу откроются окна проверки грамматики.
+ Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выдет ошибки при тестинге.
+ 
  
  6)Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
  
@@ -71,7 +73,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image config](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config.png)
  
- В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли  visitor или listener, а также   другую требуемую информацию, и нажимаем  кнопку ОК
+ В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли  visitor или listener, а также   другую требуемую информацию, и нажимаем  кнопку ОК. Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта. Для того, чтобы java ее нашла, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо пренестив основной проект, иначе java не увидит сгенерированные файлы.
   И ANTLR после этого генерирует файлы для распознавания (правда, в моем случае они появились не в той папке, пришлось переносить)
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
