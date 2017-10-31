@@ -54,8 +54,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
- Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выходят ошибки при тестинге. Тем не менее генерируются рабочие файлы.
- 
+ Внизу откроются окна проверки грамматики.  
  
  ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
