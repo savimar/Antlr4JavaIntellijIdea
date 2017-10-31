@@ -82,7 +82,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
- Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенести в основной проект, иначе java не увидит сгенерированные файлы. В моем случае файлы перенесены.
+ Для того, чтобы java увидела эти файлы, папку нужно либо пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенести в основной проект. В моем случае файлы были перенесены.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
@@ -91,7 +91,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 ```
  public class HelloParser extends Parser { ... }
 ```
-Класс HelloLexer.java  - это описание класса лексера, или лексического анализатора,  который выделяет из потока символов лексемы или токены, например: целые числа, идентификаторы, строки и т.д; отвечающего грамматике HelloInit: 
+Класс HelloLexer.java  - это описание класса лексера, или лексического анализатора,  отвечающего грамматике HelloInit: 
 ```
  public class HelloLexer extends Lexer { ... }
 ```
