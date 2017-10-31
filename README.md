@@ -86,7 +86,20 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-8.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
+  8. ANTLR сгенерировал такие классы:
+ Класс HelloParser.java  - это описание класса парсера,  то есть синтаксического анализатора, отвечающего грамматике Hello: 
+```
+ public class HelloParser extends Parser { ... }
+```
+Класс HelloLexer.java  - это описание класса лексера, или лексического анализатора,  который выделяет из потока символов лексемы или токены, например: целые числа, идентификаторы, строки и т.д; отвечающего грамматике HelloInit: 
+```
+ public class HelloLexer extends Lexer { ... }
+```
+ Hello.tokens, HelloLexer.tokens  - это вспомогательные классы, которые содержат информацию о токенах
+ HellotListener.java, HelloBaseListener.java - это классы, содержащие описания методов, которые позволяют выполнять определенный действия при обходе синтаксического дерева
+
+  
+9.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
@@ -99,7 +112,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
  
-9. И, наконец, класс Main - точку входа в программу
+10. И, наконец, класс Main - точку входа в программу
  
   ```
   public class Main {
@@ -115,7 +128,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
 
-10. Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+11. Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
  ```
 Entering R : world
 Exiting R
