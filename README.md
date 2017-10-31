@@ -86,7 +86,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-8.  После этого добавим класс HelloWalker
+8.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
