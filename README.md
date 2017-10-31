@@ -12,7 +12,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 ![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
 3) Для Maven проекта добавить в pom.xml или создать новый проект.
-
+в dependencies
 ```
  <dependency>
             <groupId>org.antlr</groupId>
@@ -20,7 +20,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
             <version>4.7</version>
  </dependency> 
  ```
- и
+ и в  plugins
  ```
   <plugin>
     <groupId>org.antlr</groupId>
@@ -54,7 +54,8 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
- Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выдет ошибки при тестинге. Тем не менее генерируются рабоие файлы.
+ Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выходят ошибки при тестинге. Тем не менее генерируются рабочие файлы.
+ 
  
  ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
@@ -63,7 +64,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
  
- После этого появися в правом нижнем углу сообщение
+ После этого появится в правом нижнем углу сообщение
  
  
  7. Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
@@ -82,7 +83,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
- Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенести в основной проект, иначе java не увидит сгенерированные файлы. В этом случае файлы перенесены.
+ Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенести в основной проект, иначе java не увидит сгенерированные файлы. В моем случае файлы перенесены.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
