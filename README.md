@@ -96,7 +96,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  public class HelloLexer extends Lexer { ... }
 ```
  Hello.tokens, HelloLexer.tokens  - это вспомогательные классы, которые содержат информацию о токенах
- HellotListener.java, HelloBaseListener.java - это классы, содержащие описания методов, которые позволяют выполнять определенный действия при обходе синтаксического дерева
+ HelloListener.java, HelloBaseListener.java, HelloBaseVisitor, HelloVisitor - это классы, содержащие описания методов, которые позволяют выполнять определенный действия при обходе синтаксического дерева
 
   
 9.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
