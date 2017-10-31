@@ -82,7 +82,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
- Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенестив основной проект, иначе java не увидит сгенерированные файлы. В этом случае файлы перенесены.
+ Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенести в основной проект, иначе java не увидит сгенерированные файлы. В этом случае файлы перенесены.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
