@@ -1,6 +1,6 @@
 # Antlr4  for Java (Maven) and Intellij Idea
 
-1. Поставить Oracle Java JDK и Intellij Idea (если они еще не поставлены), запустить Intellij Idea
+1. Поставить Oracle Java JDK и Intellij Idea (1)Поставить Oracle Java JDK и Intellij Idea, (можно пропустить этот шаг, если они уже поставлены), и запустить Intellij Idea
 
 
 2. File-Setting-Plugins
