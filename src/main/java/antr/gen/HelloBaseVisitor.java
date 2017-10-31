@@ -1,5 +1,5 @@
 // Generated from C:/Users/User/IdeaProjects/Antlr-Java-and-Intellij-Idea/src/main/java/antr\Hello.g4 by ANTLR 4.7
-package antr;
+package antr.gen;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**

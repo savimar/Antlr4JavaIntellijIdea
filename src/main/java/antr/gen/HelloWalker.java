@@ -1,4 +1,4 @@
-package antr;
+package antr.gen;
 
 public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
