@@ -1,9 +1,9 @@
 # Antlr4  for Java (Maven) and Intellij Idea
 
-1)Поставить Oracle Java JDK и Intellij Idea, запустить Intellij Idea
+1. Поставить Oracle Java JDK и Intellij Idea (если они еще не поставлены), запустить Intellij Idea
 
 
-2)File-Setting-Plugins
+2. File-Setting-Plugins
 
 ![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/setting.png)
 
@@ -38,7 +38,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Как составлять грамматику - это уже тема для отдельной статьи. Для примера взято содержимое примера с официального сайта для файла Hello.g4
+4. Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Как составлять грамматику - это уже тема для отдельной статьи. Для примера взято содержимое примера с официального сайта для файла Hello.g4
 
  ```
 // Define a grammar called Hello
@@ -50,7 +50,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ```
  
  
- 5)  Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
+ 5. Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
@@ -59,14 +59,14 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
  
- 6) Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
+ 6. Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
  
  ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
  
  После этого появися в правом нижнем углу сообщение
  
  
- 7)Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
+ 7. Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
  
  ![Image configure](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/configure.png)
  
@@ -86,7 +86,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-8)  После этого добавим класс HelloWalker
+8.  После этого добавим класс HelloWalker
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
@@ -99,7 +99,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
  
-9) И, наконец, класс Main - точку входа в программу
+9. И, наконец, класс Main - точку входа в программу
  
   ```
   public class Main {
@@ -115,7 +115,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
 
-10) Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+10. Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
  ```
 Entering R : world
 Exiting R
