@@ -79,11 +79,11 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image config_full](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config_full.png)
  
- Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта. Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенестив основной проект, иначе java не увидит сгенерированные файлы.
+ И ANTLR после этого генерирует файлы для распознавания. Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта, причем  java не распознает эти файлы.
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
-  И ANTLR после этого генерирует файлы для распознавания (правда, в моем случае они появились не в той папке, пришлось переносить)
+ Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенестив основной проект, иначе java не увидит сгенерированные файлы. В этом случае файлы перенесены.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
