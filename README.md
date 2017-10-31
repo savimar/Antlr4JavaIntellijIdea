@@ -38,7 +38,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Для примера взято содержимое примера с официального сайта для файла Hello.g4
+4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Как составлять грамматику - это уже тема для отдельной статьи. Для примера взято содержимое примера с официального сайта для файла Hello.g4
 
  ```
 // Define a grammar called Hello
@@ -77,6 +77,43 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
   И ANTLR после этого генерирует файлы для распознавания (правда, в моем случае они появились не в той папке, пришлось переносить)
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
+  
+  После этого добавим класс HelloWalker
+  ``` 
+  public class HelloWalker extends HelloBaseListener {
+    public void enterR(HelloParser.RContext ctx ) {
+        System.out.println( "Entering R : " + ctx.ID().getText() );
+    }
+
+    public void exitR(HelloParser.RContext ctx ) {
+        System.out.println( "Exiting R" );
+    }
+}
+ ```
+ 
+ И, наконец, класс Main - точку входа в программу
+ 
+  ```
+  public class Main {
+    public static void main( String[] args) throws Exception
+    {
+        HelloLexer lexer = new HelloLexer(new ANTLRInputStream("hello world"));
+        CommonTokenStream tokens = new CommonTokenStream( lexer );
+        HelloParser parser = new HelloParser( tokens );
+        ParseTree tree = parser.r();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk( new HelloWalker(), tree );
+    }
+}
+ ```
+
+Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+ ```
+Entering R : world
+Exiting R
+ ```
+  
+ 
  
   
  
