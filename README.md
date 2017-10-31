@@ -1,9 +1,9 @@
-# Antlr-Java-and-Intellij-Idea
+# Antlr4  for Java (Maven) and Intellij Idea
 
-1)Поставить Oracle Java JDK и Intellij Idea, запустить Intellij Idea
+1. Поставить Oracle Java JDK и Intellij Idea (если они еще не поставлены), запустить Intellij Idea
 
 
-2)File-Setting-Plugins
+2. File-Setting-Plugins
 
 ![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/setting.png)
 
@@ -11,7 +11,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 ![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
-3)Для Maven проекта добавить в pom.xml или создать новый проект.
+3) Для Maven проекта добавить в pom.xml или создать новый проект.
 
 ```
  <dependency>
@@ -38,7 +38,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4) Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Как составлять грамматику - это уже тема для отдельной статьи. Для примера взято содержимое примера с официального сайта для файла Hello.g4
+4. Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Как составлять грамматику - это уже тема для отдельной статьи. Для примера взято содержимое примера с официального сайта для файла Hello.g4
 
  ```
 // Define a grammar called Hello
@@ -50,22 +50,23 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ```
  
  
- 5)
- Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
+ 5. Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
- Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выдет ошибки при тестинге.
+ Внизу откроются окна проверки грамматики. Хоть файл и с официального сайта, но лично у меня выдет ошибки при тестинге. Тем не менее генерируются рабоие файлы.
+ 
+ ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
  
- 6)Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
+ 6. Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
  
  ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
  
  После этого появися в правом нижнем углу сообщение
  
  
- 7)Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
+ 7. Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
  
  ![Image configure](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/configure.png)
  
@@ -73,12 +74,19 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
  ![Image config](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config.png)
  
- В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли  visitor или listener, а также   другую требуемую информацию, и нажимаем  кнопку ОК. Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта. Для того, чтобы java ее нашла, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо пренестив основной проект, иначе java не увидит сгенерированные файлы.
-  И ANTLR после этого генерирует файлы для распознавания (правда, в моем случае они появились не в той папке, пришлось переносить)
+ В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли  visitor или listener, а также   другую требуемую информацию, и нажимаем  кнопку ОК. 
+ 
+ ![Image config_full](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config_full.png)
+ 
+ И ANTLR после этого генерирует файлы для распознавания. Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта, причем  java не распознает эти файлы.
+ 
+ ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
+ 
+ Для того, чтобы java ее увидела, ее нужно пометить правой кнопкой мыши «Mark Directory As», с «Generated Sources Root» на папку подменю, либо перенестив основной проект, иначе java не увидит сгенерированные файлы. В этом случае файлы перенесены.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-  После этого добавим класс HelloWalker
+8.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
@@ -91,7 +99,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
  
- И, наконец, класс Main - точку входа в программу
+9. И, наконец, класс Main - точку входа в программу
  
   ```
   public class Main {
@@ -107,7 +115,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
 
-Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+10. Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
  ```
 Entering R : world
 Exiting R
