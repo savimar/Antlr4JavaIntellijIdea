@@ -11,7 +11,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
 
 ![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
-3)Для Maven проекта добавить в pom.xml или создать новый проект.
+3) Для Maven проекта добавить в pom.xml или создать новый проект.
 
 ```
  <dependency>
@@ -50,8 +50,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ```
  
  
- 5)
- Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
+ 5)  Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
@@ -60,7 +59,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
  
- 6)Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
+ 6) Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
  
  ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
  
@@ -87,7 +86,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-  После этого добавим класс HelloWalker
+8)  После этого добавим класс HelloWalker
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
@@ -100,7 +99,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
  
- И, наконец, класс Main - точку входа в программу
+9) И, наконец, класс Main - точку входа в программу
  
   ```
   public class Main {
@@ -116,7 +115,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
 
-Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+10) Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
  ```
 Entering R : world
 Exiting R
