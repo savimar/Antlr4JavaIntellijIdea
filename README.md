@@ -1,18 +1,18 @@
 # Antlr4  for Java (Maven) and Intellij Idea
 
-1. Поставить Oracle Java JDK и Intellij Idea (1)Поставить Oracle Java JDK и Intellij Idea, (можно пропустить этот шаг, если они уже поставлены), и запустить Intellij Idea
+1. Inslall Oracle Java JDK и Intellij Idea, (you can skip this step), and run Intellij Idea
 
 
 2. File-Setting-Plugins
 
 ![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/setting.png)
 
-Bвести в поле поиска ANTLR и поставить плагин ANTLR v4 grammar plugin. Возможно, понадобится дополнительный поиск по всем репозиториям.
+Enter in the search field ANTLR and install plugin ANTLR v4 grammar plugin. Perhaps, you need an additional search on all repositories.
 
 ![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
-3) Для Maven проекта добавить в pom.xml или создать новый проект.
-в dependencies
+3) For the Maven project add into pom.xml 
+in dependencies
 ```
  <dependency>
             <groupId>org.antlr</groupId>
@@ -20,7 +20,7 @@ Bвести в поле поиска ANTLR и поставить плагин AN
             <version>4.7</version>
  </dependency> 
  ```
- и в  plugins
+ in  plugins
  ```
   <plugin>
     <groupId>org.antlr</groupId>
@@ -36,9 +36,9 @@ Bвести в поле поиска ANTLR и поставить плагин AN
             </plugin>
  ```
 
-Подробности https://github.com/antlr/antlr4/blob/master/doc/java-target.md
+View details https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4. Далее создам и добавляем вручную файл грамматики с расширением .g4. Имя файла должно совпадать с словом после grammar в первой строчке. Составляется она примерно так: берем то, что нужно парсить, и разбиваем на отдельные токены. Для токенов описываем лексемы, например все английские буквы  [a-zA-Z];, все числа [0-9] и т.п. . Для примера взято содержимое примера с официального сайта для файла Hello.g4
+4. Next, we create file  manually a grammar file with the extension.g4 and add it into project.  For example, this example is from the official site called Hello.g4
 
  ```
 // Define a grammar called Hello
@@ -50,56 +50,55 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  ```
  
  
- 5. Далее правой кнопкой мыши кликнуть по второй строчке файла, которая начинается с r и выбрать пункт меню Test Rule r
+ 5. Next, right-click on the second line of the file, which starts with "r" and select the menu item Test Rule r
  
  ![Image test_rule](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/test_rule.png)
  
- Внизу откроются окна проверки грамматики. В данном случае, плагин показывает ошибку, скорее всего связанную с тем, что это тестовый пример, однако парсер генерируется. Про это можно почитать здесь https://github.com/antlr/antlr4/issues/118, и пока ее проигнорируем. Но в реальных проектах, надо бы внимательнее обращать внимание на эти ошибки.  
+ 
  
  ![Image plugin_start](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugin_start.png)
  
  
- 6. Кликаем по файлу грамматики правой кнопкой мыши, выбираем пункт меню Configute ANTLR Recoqnizer  и генерируем парсер 
+ 6. Click the grammar file with the right mouse button, select the menu item Configute ANTLR Recoqnizer  and generate a parser
  
  ![Image generate_recoqnizer](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generate_recoqnizer.png)
  
- После этого появится в правом нижнем углу сообщение  об успехе
+
  
- 
- 7. Далее снова кликаем по файлу правой кнопкой мыши и выбираем пункт меню Configute ANTLR, 
+ 7. ДNext click the file again with the right click and select the menu item Configute ANTLR, 
  
  ![Image configure](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/configure.png)
  
- и выходит окно  для конфигурирования генерации файлов
+and a window opens for configuring the generation of files
  
  ![Image config](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config.png)
  
- В этом окне вводим данные о папке назначения и языке программирования, в нашем случае Java, нужны ли  visitor или listener, а также   другую требуемую информацию, и нажимаем  кнопку ОК. 
+ Fill the fields as in the picture and click OK
  
  ![Image config_full](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/config_full.png)
  
- И ANTLR после этого генерирует файлы для распознавания. Тем не менее, хотя выходной каталог указан, часто создается новая папка gen в корне проекта, причем  java не распознает эти файлы.
+ ANTLR generates files for recognition. However, although the output directory is specified, a new gen folder in the project root is often created, and java does not recognize these files.
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
- Для того, чтобы java увидела эти файлы, папку нужно либо пометить правой кнопкой мыши «Mark Directory As» на «Generated Sources Root» на папку gen, либо перенести в основной проект. В моем случае файлы были перенесены.
+The folder should either be marked with the right mouse button "Mark Directory As" on "Generated Sources Root" on the gen folder, or it transferred to the main project. In my case, the files were moved.
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
-  8. ANTLR сгенерировал такие классы:
- Класс HelloParser.java  - это описание класса парсера,  то есть синтаксического анализатора, отвечающего грамматике Hello: 
+  8. ANTLR generated such classes:
+ Класс HelloParser.java  -this is the description of the parser class of the corresponding grammar Hello: 
 ```
  public class HelloParser extends Parser { ... }
 ```
-Класс HelloLexer.java  - это описание класса лексера, или лексического анализатора,  отвечающего грамматике HelloInit: 
+Класс HelloLexer.java  - this is the description of the class of the lexer of the corresponding grammar HelloInit: 
 ```
  public class HelloLexer extends Lexer { ... }
 ```
- Hello.tokens, HelloLexer.tokens  - это вспомогательные классы, которые содержат информацию о токенах
- HelloListener.java, HelloBaseListener.java, HelloBaseVisitor, HelloVisitor - это классы, содержащие описания методов, которые позволяют выполнять определенный действия при обходе синтаксического дерева
+ Hello.tokens, HelloLexer.tokens  - These are helper classes that contain information about tokens
+ HelloListener.java, HelloBaseListener.java, HelloBaseVisitor, HelloVisitor - these are classes that contain method descriptions that allow you to perform certain actions when traversing a syntax tree
 
   
-9.  После этого добавим класс HelloWalker (хотя это класс не обязателен,  этот код можно изменить и добавить в Main для вывода информации)
+9.  Then add the class HelloWalker (although this class is not required, this code can be changed and added to the Main for outputting information)
   ``` 
   public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
@@ -112,7 +111,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
  
-10. И, наконец, класс Main - точку входа в программу
+10. And add class Main - entry point
  
   ```
   public class Main {
@@ -128,7 +127,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 }
  ```
 
-11. Запускаем метод  main, и получаем на выходе в консоли успешно отработанный парсинг
+11. Run the method main
  ```
 Entering R : world
 Exiting R
