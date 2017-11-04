@@ -7,7 +7,7 @@
 
 ![Image setting](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/setting.png)
 
-Enter in the search field ANTLR and install plugin ANTLR v4 grammar plugin. Perhaps, you need an additional search on all repositories.
+Enter in the search field ANTLR and install plugin ANTLR v4 grammar plugin. Perhaps, you will need an additional search on all repositories.
 
 ![Image plugin](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/plugins.png)
 
@@ -65,7 +65,7 @@ WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
  
 
  
- 7. ДNext click the file again with the right click and select the menu item Configute ANTLR, 
+ 7. Next click the file again with the right click and select the menu item Configute ANTLR, 
  
  ![Image configure](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/configure.png)
  
