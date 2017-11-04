@@ -38,7 +38,7 @@ in dependencies
 
 View details https://github.com/antlr/antlr4/blob/master/doc/java-target.md
 
-4. Next, we create file  manually a grammar file with the extension.g4 and add it into project.  For example, this example is from the official site called Hello.g4
+4. Next, create file  manually a grammar file with the extension.g4 and add it into project.  For example, this example is from the official site called Hello.g4
 
  ```
 // Define a grammar called Hello
