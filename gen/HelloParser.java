@@ -1,16 +1,12 @@
 // Generated from C:/Users/User/IdeaProjects/Antlr-Java-and-Intellij-Idea/src/main/java/antr\Hello.g4 by ANTLR 4.7
-package antr.gen;
-import org.antlr.v4.runtime.Lexer;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.TokenStream;
-import org.antlr.v4.runtime.*;
+
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class HelloLexer extends Lexer {
+public class HelloParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -18,16 +14,10 @@ public class HelloLexer extends Lexer {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, ID=2, WS=3;
-	public static String[] channelNames = {
-		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
-	};
-
-	public static String[] modeNames = {
-		"DEFAULT_MODE"
-	};
-
+	public static final int
+		RULE_r = 0;
 	public static final String[] ruleNames = {
-		"T__0", "ID", "WS"
+		"r"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -69,12 +59,6 @@ public class HelloLexer extends Lexer {
 		return VOCABULARY;
 	}
 
-
-	public HelloLexer(CharStream input) {
-		super(input);
-		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
-	}
-
 	@Override
 	public String getGrammarFileName() { return "Hello.g4"; }
 
@@ -85,24 +69,60 @@ public class HelloLexer extends Lexer {
 	public String getSerializedATN() { return _serializedATN; }
 
 	@Override
-	public String[] getChannelNames() { return channelNames; }
-
-	@Override
-	public String[] getModeNames() { return modeNames; }
-
-	@Override
 	public ATN getATN() { return _ATN; }
 
+	public HelloParser(TokenStream input) {
+		super(input);
+		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+	public static class RContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(HelloParser.ID, 0); }
+		public RContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_r; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HelloListener ) ((HelloListener)listener).enterR(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HelloListener ) ((HelloListener)listener).exitR(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HelloVisitor ) return ((HelloVisitor<? extends T>)visitor).visitR(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final RContext r() throws RecognitionException {
+		RContext _localctx = new RContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_r);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(2);
+			match(T__0);
+			setState(3);
+			match(ID);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\5\33\b\1\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\3\2\3\2\3\2\3\2\3\2\3\2\3\3\6\3\21\n\3\r\3\16\3\22\3"+
-		"\4\6\4\26\n\4\r\4\16\4\27\3\4\3\4\2\2\5\3\3\5\4\7\5\3\2\4\3\2c|\5\2\13"+
-		"\f\17\17\"\"\2\34\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\3\t\3\2\2\2\5\20"+
-		"\3\2\2\2\7\25\3\2\2\2\t\n\7j\2\2\n\13\7g\2\2\13\f\7n\2\2\f\r\7n\2\2\r"+
-		"\16\7q\2\2\16\4\3\2\2\2\17\21\t\2\2\2\20\17\3\2\2\2\21\22\3\2\2\2\22\20"+
-		"\3\2\2\2\22\23\3\2\2\2\23\6\3\2\2\2\24\26\t\3\2\2\25\24\3\2\2\2\26\27"+
-		"\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\31\3\2\2\2\31\32\b\4\2\2\32\b"+
-		"\3\2\2\2\5\2\22\27\3\b\2\2";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5\b\4\2\t\2\3\2\3"+
+		"\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\4\2\2\6\3\3\2"+
+		"\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -1,5 +1,3 @@
-package antr.gen;
-
 public class HelloWalker extends HelloBaseListener {
     public void enterR(HelloParser.RContext ctx ) {
         System.out.println( "Entering R : " + ctx.ID().getText() );
