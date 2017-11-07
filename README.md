@@ -81,7 +81,11 @@ and a window opens for configuring the generation of files
  
  ![Image пут](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/gen.png)
  
-The folder should either be marked with the right mouse button "Mark Directory As" on "Generated Sources Root" on the gen folder, or it transferred to the main project. In my case, the files were moved.
+The folder should either be marked with the right mouse button "Mark Directory As" on "Generated Sources Root" on the gen folder
+
+![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/generated_sourses.png)
+  
+  It should be like this picture
   
   ![Image files](https://github.com/savimar/Antlr-Java-and-Intellij-Idea/blob/master/src/main/resources/img/files.png)
   
